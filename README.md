@@ -34,3 +34,4 @@
 - [SYS.1 — 요구사항](docs/stakeholder-requirements.md)
 - [SYS.2 — 시스템 요구사항 초안](docs/system-requirements.md)
 - [아키텍처 구성안](docs/architecture.md)
+- [보유·구매 부품 명세](docs/parts.md)

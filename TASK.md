@@ -1,98 +1,145 @@
 # Vehicle Lamp ECU — TASK
 
-> 목표: STM32F103 기반 후방 통합 램프 ECU를 요구사항 → 시스템/소프트웨어 설계 → Embedded C → SIL → Custom HIL → 요구사항 검증 순서로 개발한다.
->
-> 기준: Automotive SPICE 4.1의 SYS/SWE 프로세스를 **학습 및 산출물 구성에 참고**한다. 공식 A-SPICE 평가·인증, 정식 AUTOSAR 준수, ISO 26262 준수를 주장하지 않는다.
->
-> 규칙: **실제로 수행하고 산출물/검증 근거가 확인된 항목만 `[x]`** 처리한다. 계획·제안·미작성 문서는 `[ ]`로 유지한다. 파일 경로는 예정 경로이며, 단계별 설계 판단에 따라 변경 시 이 파일도 업데이트한다.
+> **프로젝트:** STM32F103 기반 후방 통합 램프 ECU 포트폴리오.
+> **개발 방식:** 이해관계자 요구·가정 → 시스템 요구사항 → 시스템 아키텍처 → SW 요구사항·아키텍처 → Embedded C 구현 → SIL → Custom HIL → 최종 검증.
+> **참고:** Automotive SPICE 4.1의 SYS/SWE 프로세스 및 V-Model 개념을 학습 목적으로 참고한다. 정식 평가·인증, AUTOSAR Classic 준수, ISO 26262 준수를 주장하지 않는다.
+> **체크 원칙:** 작업을 수행하고 산출물·검토·시험 증거를 확인한 항목만 `[x]`로 바꾼다. **결정 완료 ≠ 요구사항 작성 완료 ≠ 구현/검증 완료.**
 
-## 0. 프로젝트 초기 상태
+## 0. 현재 상태와 바로 다음 작업
 
+- **현재:** D-01~D-14 사전 설계 정책 확정 완료. [결정 기록](docs/decisions/decision-log.md) 존재.
+- **다음 주작업:** **SYS.2 시스템 요구사항 분석**. SYS.1의 자체 이해관계자 요구·가정 정리를 SYS.2 착수 시 함께 작성한다.
+- **미착수:** `SYS-xxx` 요구사항, 회로·핀맵·BOM, Embedded C, SIL/HIL 테스트 및 결과 문서.
+- **진행 원칙:** 마감 때문에 기능·검증 범위를 임의로 삭제하지 않는다. 실제 측정에 따른 수정은 근거·영향·재검증을 기록한다.
+
+### 현황 확인
 - [x] GitHub 저장소 `d4eh0/vehicle-lamp-ecu` 생성
-- [x] 구현 범위 선정: 후방 통합 램프 ECU (좌/우 방향지시등, 비상등, 미등, 제동등, 후진등)
-- [x] 후진 입력 선정: 2단 슬라이드 스위치 (`R / NOT R`)
-- [ ] SYS.2 요구사항 분석 완료
+- [x] 프로젝트 기능 범위 및 D-01~D-14 설계 결정 확정
+- [x] `docs/decisions/decision-log.md`에 선택·대안·근거·검증 방향 기록
+- [ ] SYS.1 관련 자체 요구·가정 문서 작성 및 검토
+- [ ] SYS.2 시스템 요구사항 분석 완료
+- [ ] 시스템 아키텍처, 코드 및 SIL/HIL 검증 완료
 
-## 1. 개발 프로세스 및 정확한 산출물 경로
+### 다음 액션 (순서대로)
+1. [ ] `docs/system/stakeholder-needs.md`에서 사용자·시험 담당자의 기대, ECU 범위, 가정 및 제외 범위 정리
+2. [ ] `docs/system/system-requirements.md`에서 시스템 경계·입출력과 `SYS-xxx` 요구사항 초안 작성
+3. [ ] `docs/traceability/requirements-traceability.md`에서 D-번호 → SYS 요구사항 매핑 시작
+4. [ ] 요구사항의 모호함·충돌·누락을 검토하고 SYS.2 기준선 확정
+5. [ ] SYS.3 시스템 아키텍처·부품·회로·핀맵 설계로 진행
 
-### SYS.2 — 시스템 요구사항 분석
-- [ ] ECU 시스템 경계, 기능 및 입력/출력 정의
-- [ ] 정상 동작, 동시 입력, 전원 상태 및 비정상 상황 정의
-- [ ] 검증 가능한 요구사항 ID (`SYS-xxx`)와 수용 기준 확정
-- [ ] **산출물:** `docs/system/system-requirements.md`
-- [ ] **결정 기록:** `docs/decisions/decision-log.md`
+## 1. 개발 단계 및 산출물
+
+### SYS.1 — 요구사항 도출 (자체 프로젝트 사전 요구 정리)
+- [ ] 가상 사용자(운전자), 프로젝트 담당자, 시험 담당자 역할과 기대를 **가정**으로 명시한다. 실제 고객 요구 수집으로 표현하지 않는다.
+- [ ] 목표 기능, 사용 시나리오, 범위 제외(AUTO 조명, 기어 전체 모델, 실제 단선·단락 검출 등), 작동 환경과 전제 조건을 정리한다.
+- [ ] 요구·가정과 D-01~D-14 선택의 관계를 검토하고 미결 요구가 없는지 확인한다.
+- [ ] **산출물:** `docs/system/stakeholder-needs.md`
+- **완료 기준:** 가상 이해관계자 요구와 프로젝트에서 합의한 가정·제외 범위를 구분하여 검토했다. 공식 SYS.1 수행 또는 외부 고객 승인으로 주장하지 않는다.
+
+### SYS.2 — 시스템 요구사항 분석 ★ 현재 목표
+- [ ] 시스템 경계·운용 모드·외부 인터페이스를 정의한다(STM32 ECU / 물리 스위치 / 램프 / 전원 / 시험 장비).
+- [ ] 입력 목록(IGN, 방향 레버, 비상등, 미등, 브레이크, R)과 출력 목록(좌우 방향지시, 좌우 공용 미등·제동등, 후진등, CHMSL)을 논리적 채널 단위로 정의한다.
+- [ ] 정상 기능·동시 입력 우선순위·시동 OFF/ON·리셋·잘못된 입력을 **진리표/시나리오**로 정리한다.
+- [ ] D-07, D-09, D-11, D-13의 점멸·디바운싱·PWM·응답시간을 수치와 측정 시작/종료 조건으로 분리한다.
+- [ ] D-14의 시험용 가상 고장 주입/격리/해제/로그 요구를 정의하고, 실제 LED 고장 감지 및 양산 기능안전과 구분한다.
+- [ ] 각 `SYS-xxx`를 **단일하고 검증 가능한 문장**으로 작성한다(동작 조건, 기대 출력, 수치·허용 오차, 우선순위, 예외).
+- [ ] D-01~D-14 전부가 하나 이상의 요구사항 또는 명시적인 범위/가정에 연결되는지 확인한다.
+- [ ] `D-xx → SYS-xxx → 예정 검증 방법·테스트 ID`의 1차 추적성 표를 만든다(아직 실행하지 않은 테스트는 '계획'으로 표시).
+- [ ] 요구사항 간 충돌·중복·누락, 테스트 가능성 및 SYS.3/SWE.1로 넘길 상세 설계 사항을 검토한다.
+- [ ] 요구사항 검토 결과와 변경 필요 사항을 반영하여 **SYS.2 기준선**을 확정한다.
+- [ ] **주 산출물:** `docs/system/system-requirements.md`
+- [ ] **초기 추적성:** `docs/traceability/requirements-traceability.md`
+- **완료 기준:** 모든 `SYS-xxx`에 근거 D-ID/요구·가정, 수용 기준, 검증 방법이 있고, 출력·타이밍·고장 범위가 빠짐없이 정의되며 검토가 완료되었다. 구현이나 시험 PASS를 요구하지는 않는다.
 
 ### SYS.3 — 시스템 아키텍처 설계
-- [ ] ECU·스위치·램프·HIL 장비의 시스템 구성과 인터페이스 정의
-- [ ] HW/SW 기능 할당, 3.3V 전기적 조건, GPIO 배선/핀 맵 결정
-- [ ] **산출물:** `docs/system/system-architecture.md`
-- [ ] **회로/배선:** `hardware/wiring-plan.md`
-- [ ] **핀 맵:** `hardware/pin-map.md`
+- [ ] ECU·입력 스위치·램프·전원·UNO Q HIL의 블록도, HW/SW 기능 할당, 경계·인터페이스 정의
+- [ ] STM32 및 UNO Q 연결 전압·접지·입력 보호, 시동 OFF 독립 전원 구조 검토
+- [ ] LED 채널별 전류·저항·트랜지스터/드라이버와 PWM 출력 회로 설계(특히 CHMSL LED 3개)
+- [ ] GPIO/타이머/UART 자원 및 핀맵 결정, 배선도 작성
+- [ ] 부품 목록(BOM), 보유/구매 구분, 회로 전기적 검증·시운전 체크리스트 작성
+- [ ] UNO Q를 통한 1kHz PWM 및 ms 단위 에지 측정의 실현 가능성 확인·측정 방식 설계
+- [ ] **아키텍처:** `docs/system/system-architecture.md`
+- [ ] **회로·배선:** `hardware/wiring-plan.md`
+- [ ] **핀맵:** `hardware/pin-map.md`
+- [ ] **BOM:** `hardware/bom.md`
+- **완료 기준:** 요구사항을 HW/SW 요소에 할당하고, 실제 구성할 수 있는 전기적 인터페이스·부품·배선과 검증 연결을 확인했다.
 
 ### SWE.1 — 소프트웨어 요구사항 분석
-- [ ] `SYS-xxx`에서 `SWR-xxx` 도출 및 정량적인 검증 조건 작성
-- [ ] 시스템 ↔ SW 요구사항 양방향 추적성 작성
+- [ ] `SYS-xxx`를 SW가 구현해야 할 `SWR-xxx`로 분해하고, HW 요구와 SW 요구를 구분
+- [ ] 상태 전이·우선순위·시간 처리·디바운싱·오류 기록·시험용 UART 명령 요구 정의
+- [ ] SW 요구사항별 수용 기준·시험 방법과 SYS↔SWR 양방향 추적성 보완
 - [ ] **산출물:** `docs/software/software-requirements.md`
-- [ ] **추적성:** `docs/traceability/requirements-traceability.md`
+- [ ] **추적성 갱신:** `docs/traceability/requirements-traceability.md`
+- **완료 기준:** 각 SW 요구사항이 검증 가능하며 관련 SYS 요구사항으로 추적된다.
 
 ### SWE.2 — 소프트웨어 아키텍처 설계
-- [ ] AUTOSAR Classic에서 **계층 분리 개념만 참고**해 ASW/인터페이스/하드웨어 의존성 분리
-- [ ] SW 컴포넌트, 데이터 흐름, 인터페이스 및 오류 전파 정의
-- [ ] **산출물:** `docs/software/software-architecture.md`
+- [ ] AUTOSAR Classic의 계층 분리 **개념만 참고**하여 응용 로직·인터페이스·HAL 의존성 분리
+- [ ] 입력 안정화, 기능/우선순위, 점멸·PWM, 오류 진단/로그, 출력 제어 모듈 책임과 데이터 흐름 정의
+- [ ] PC SIL과 STM32 실물에서 핵심 제어 로직을 재사용할 빌드·추상화 경계 결정
+- [ ] **아키텍처:** `docs/software/software-architecture.md`
 - [ ] **인터페이스 명세:** `docs/software/interface-specification.md`
+- **완료 기준:** 모듈과 인터페이스, 의존성 및 SW 요구사항 할당이 검토되었다.
 
-### SWE.3 — SW 상세설계 및 구현
-- [ ] UML 상태머신, 이벤트/전이표, 함수·데이터·타이밍 상세설계
-- [ ] Embedded C 구현, STM32 HAL 연동 및 실물 브레드보드 회로 제작
+### SWE.3 — SW 상세설계 및 Embedded C 구현
+- [ ] UML 상태머신, 전이표, 함수·데이터, 타이머/이벤트 및 오류 처리 상세설계
+- [ ] Embedded C로 제어 로직 구현, STM32 HAL/타이머/PWM/GPIO/UART 연동
+- [ ] STM32 펌웨어 빌드·플래시·정상 입력 작동 확인 및 실물 램프 회로 통합
+- [ ] 테스트 전용 가상 고장 주입 인터페이스와 일반 운용 빌드의 활성 범위 구분
 - [ ] **상세설계:** `docs/software/software-detailed-design.md`
-- [ ] **구현/빌드 기록:** `docs/software/implementation-notes.md`
-- [ ] **펌웨어 진입점(예정):** `firmware/Core/Src/main.c`
-- [ ] **펌웨어 헤더(예정):** `firmware/Core/Inc/main.h`
-- [ ] SW 모듈별 추가 `.c/.h` 파일명은 SWE.2 아키텍처 확정 후 여기 명시
+- [ ] **구현·빌드 기록:** `docs/software/implementation-notes.md`
+- [ ] **펌웨어(예정):** `firmware/Core/Src/main.c`, `firmware/Core/Inc/main.h` 및 SWE.2에서 정의한 모듈별 `.c/.h`
+- **완료 기준:** 실제 빌드 가능한 코드와 상세설계·구현 근거가 있으며, 단위 검증 단계에 진입할 수 있다.
 
-### SWE.4 — 소프트웨어 단위 검증 (SIL)
-- [ ] PC 네이티브 빌드에서 Stub/Mock 기반 단위·경계값·오류 처리 테스트
-- [ ] 테스트 결과 및 가능한 범위의 코드 커버리지 기록
-- [ ] **테스트 계획:** `docs/verification/swe4-unit-test-plan.md`
-- [ ] **테스트 결과:** `docs/verification/swe4-unit-test-report.md`
-- [ ] **테스트 코드 위치:** `tests/sil/unit/` (개별 파일명은 단위 설계 후 확정)
+### SWE.4 — SW 단위 검증 (SIL)
+- [ ] PC 네이티브 빌드에서 HAL/GPIO·시간 의존성을 Stub/Mock으로 대체
+- [ ] 디바운싱 경계값, 점멸 타이밍, 우선순위, 고장 플래그 및 로그 16건 경계 시험
+- [ ] 실제 수행 결과(PASS/FAIL), 실패 원인, 회귀 시험 및 가능한 범위의 커버리지 기록
+- [ ] **계획:** `docs/verification/swe4-unit-test-plan.md`
+- [ ] **결과:** `docs/verification/swe4-unit-test-report.md`
+- [ ] **테스트 코드:** `tests/sil/unit/`
 
 ### SWE.5 — SW 컴포넌트·통합 검증 (SIL)
-- [ ] 컴포넌트 간 인터페이스, 상태 전이, 동시 입력 및 통합 동작 검증
-- [ ] **테스트 계획:** `docs/verification/swe5-integration-test-plan.md`
-- [ ] **테스트 결과:** `docs/verification/swe5-integration-test-report.md`
-- [ ] **테스트 코드 위치:** `tests/sil/integration/`
+- [ ] 입력 처리 → 상태 결정 → 출력 명령 및 진단/복구 간 인터페이스 통합 검증
+- [ ] 동시 입력, 리셋, 시동 전환, 우선순위, 모드 전환 및 비정상 흐름 시험
+- [ ] **계획:** `docs/verification/swe5-integration-test-plan.md`
+- [ ] **결과:** `docs/verification/swe5-integration-test-report.md`
+- [ ] **테스트 코드:** `tests/sil/integration/`
 
 ### SWE.6 — SW 요구사항 검증 (SIL)
-- [ ] 각 `SWR-xxx`에 검증 테스트 ID와 결과 연결
-- [ ] 요구사항 커버리지 및 회귀 검증
-- [ ] **테스트 계획:** `docs/verification/swe6-software-verification-plan.md`
-- [ ] **테스트 결과:** `docs/verification/swe6-software-verification-report.md`
-- [ ] **테스트 코드 위치:** `tests/sil/requirements/`
+- [ ] 각 `SWR-xxx`에 대응하는 테스트 ID·예상 결과·실제 결과·증거 연결
+- [ ] SW 요구사항 커버리지·미검증 항목·실패/재시험 이력 기록
+- [ ] **계획:** `docs/verification/swe6-software-verification-plan.md`
+- [ ] **결과:** `docs/verification/swe6-software-verification-report.md`
+- [ ] **테스트 코드:** `tests/sil/requirements/`
 - [ ] **추적성 갱신:** `docs/traceability/requirements-traceability.md`
 
-### SYS.4 — 시스템 통합 및 통합 검증 (Custom HIL)
-- [ ] Arduino UNO Q가 STM32 ECU의 입력을 생성하고 실제 출력을 측정하는 HIL 구성
-- [ ] GPIO 인터페이스, 출력 타이밍, HW/SW 통합 및 비정상 입력 테스트
-- [ ] **테스트 계획:** `docs/verification/sys4-system-integration-plan.md`
-- [ ] **테스트 결과:** `docs/verification/sys4-system-integration-report.md`
-- [ ] **HIL 테스트 코드 위치:** `tests/hil/`
+### SYS.4 — 시스템 통합·통합 검증 (Custom HIL)
+- [ ] UNO Q가 실제 STM32 입력을 만들고 출력 GPIO를 읽는 테스트 구성·배선·접지 검증
+- [ ] UART 시험 전용 가상 고장 주입, 채널별 출력 격리·CLEAR 복구 검증
+- [ ] 400±20ms 점멸, 디바운싱·최초 점등 지연, PWM 1kHz·듀티 20% 측정 기능 확인
+- [ ] 시험 장비의 측정 해상도·오차를 확인하고 결과를 요구사항 허용 오차와 분리
+- [ ] **계획:** `docs/verification/sys4-system-integration-plan.md`
+- [ ] **결과:** `docs/verification/sys4-system-integration-report.md`
+- [ ] **테스트 코드:** `tests/hil/`
 
-### SYS.5 — 시스템 요구사항 검증 (Custom HIL / 실물)
-- [ ] `SYS-xxx`별 End-to-End 시험 및 PASS/FAIL 검증
-- [ ] 요구사항·실제 결과·증거 링크 정리
-- [ ] **테스트 계획:** `docs/verification/sys5-system-verification-plan.md`
-- [ ] **테스트 결과:** `docs/verification/sys5-system-verification-report.md`
+### SYS.5 — 시스템 요구사항 검증 (실물/Custom HIL)
+- [ ] 각 `SYS-xxx`의 End-to-End 시험과 PASS/FAIL 증거 확보
+- [ ] 입력/출력 파형·측정값·로그·사진·영상 및 테스트 ID 연결
+- [ ] 요구 미달 시 원인 분석 → 개선 또는 기준 변경 승인 → 영향 분석 → 재검증 기록
+- [ ] **계획:** `docs/verification/sys5-system-verification-plan.md`
+- [ ] **결과:** `docs/verification/sys5-system-verification-report.md`
 - [ ] **추적성 최종화:** `docs/traceability/requirements-traceability.md`
 
-### 최종 결과 정리
-- [ ] **검증 요약:** `docs/verification/verification-summary.md`
-- [ ] **프로젝트 소개, 아키텍처, 시연, 검증 근거:** `README.md` 갱신
-- [ ] 모든 SYS/SWE 단계의 증거 및 체크리스트 대조
+### 최종 포트폴리오·인수 점검
+- [ ] `README.md`에 목적·기능·현재 상태를 먼저 작성하고 각 단계마다 갱신
+- [ ] 요구사항→설계→코드→SIL/HIL→시험 결과를 한 흐름으로 안내
+- [ ] **최종 검증 요약:** `docs/verification/verification-summary.md`
+- [ ] 실제 회로 사진·시연 영상·파형·테스트 실행 방법·재현 절차 정리
+- [ ] 전 단계 산출물과 검증 증거를 대조하고 완료·미완료·범위 제외를 명확히 표시
 
-## 2. SYS.2 사전 의사결정 목록 (D-01~D-14, 총 14건)
+## 2. 확정된 사전 의사결정 (D-01~D-14)
 
-> **방법:** D-01~D-08 기초 정책을 확정한 뒤, 추가 결정 대기열의 D-09~D-14를 순서대로 확정했다. **14건의 설계 사전 결정은 완료**했으며, 구현·검증 및 SYS.2 요구사항 분석 완료는 별도 작업이다.
+> 모든 결정의 상세 근거와 대안은 [decision-log.md](docs/decisions/decision-log.md)에 있다. 아래 체크는 **정책 결정 완료**만 뜻한다. SYS/SWE 요구사항의 작성·구현·시험은 위 단계에서 별도로 체크한다.
 
 - [x] **D-01 기능 범위 (2026-10-28 12:54 KST):** 후방 통합 ECU (좌·우 방향지시등, 비상등, 미등, 제동등, 후진등)
 - [x] **D-02 후진 입력 (2026-10-28 12:54 KST):** 2단 슬라이드 스위치 (`R / NOT R`)
@@ -103,7 +150,6 @@
 - [x] **D-07 점멸 정책 (2026-10-28 16:48 KST):** 방향지시등·비상등 ON 400ms/OFF 400ms (75회/분), 각 구간 허용 오차 ±20ms, 점멸 기능 전환 시 새 기능 ON부터 시작하며 타이머 리셋
 - [x] **D-08 초기화·비정상 상황 (2026-10-28 16:52 KST):** MCU 재부팅 시 출력 OFF 안전 초기화 후 물리 입력 재평가·비상등 토글 OFF, 좌우 레버 동시 활성 시 방향지시 무효/오류 기록(정상 기능 유지), 입력 오류 및 테스트용 가상 출력 고장 주입 검증
 
-### 추가 결정 대기열
 
 - [x] **D-09 스위치 디바운싱 정책 (2026-10-28 19:43 KST):** 비상등·시동 20ms, 방향 레버·미등·후진 10ms, 브레이크 5ms(초기값). Non-blocking 시간 기반 안정화. 비상등 눌림 1회당 1회 토글 및 놓임 확인
 - [x] **D-10 보조제동등(CHMSL) 추가 (2026-10-28 19:57 KST):** 중앙 적색 LED 3개를 독립 STM32 GPIO 출력 채널 1개로 제어. 브레이크 입력 ON일 때만 점등하며 미등만 켜질 때는 OFF. 전류 제한 및 구동회로는 SYS.3에서 설계
@@ -112,12 +158,11 @@
 - [x] **D-13 첫 점등 응답 및 측정 기준 (2026-10-28 20:07 KST):** 유효 점멸 요청 확정(디바운싱 완료) 후 최초 GPIO ON까지 10ms 이내. 바운스 없는 안정 입력 기준 HIL 목표는 방향지시 20ms, 비상등 30ms 이내. D-07의 점멸 주기 오차와 별도로 검증
 - [x] **D-14 오류 기록·가상 출력 고장 처리 (2026-10-28 20:19 KST):** 테스트용 UART 명령(UNO Q→STM32)으로 채널별 가상 고장 주입, SIL에서는 내부 테스트 API 사용. 지정 출력만 강제 OFF·다른 정상 출력 유지. RAM 최근 16건 오류 이력과 명시적 CLEAR·입력 재평가. 리셋 시 RAM 이력 초기화. 실제 LED 단선·단락 감지 기능은 아님
 
-## 3. 단계별 완료 기준
+## 3. 공통 규칙 — 추적성·변경·커밋
 
-- 커밋 메시지 규칙: `docs: D-09 디바운싱 정책 확정`과 같이 영문 접두사(`feat:`, `fix:`, `docs:`, `test:`) + 한글 설명 사용
-
-- 각 단계는 문서 파일 존재만으로 완료 처리하지 않는다.
-- 요구사항은 모호하지 않고 테스트로 검증할 수 있어야 한다.
-- 설계 선택은 근거/대안/트레이드오프가 `docs/decisions/decision-log.md`에 남아야 한다.
-- 검증은 테스트 ID, 기대 결과, 실제 결과와 증거를 연결해야 한다.
-- 진행할 때마다 이 `TASK.md`의 체크 상태를 실제 완료 범위에 맞게 갱신한다.
+- **추적성:** 가정/이해관계자 요구 및 D-ID → `SYS-xxx` → `SWR-xxx` → 설계/구현 요소 → 시험 ID/결과. 초기 매핑은 SYS.2에서 만들고 이후 단계마다 갱신한다.
+- **수치 기준:** D-07/D-09/D-11/D-13 값은 초기 목표다. 미달 시 임의로 수치를 완화하지 않고 관측값, 원인, 검토 대안, 영향 범위, 변경 결론과 재시험을 기록한다.
+- **시험 증거:** 기대값·실측값·단위·측정 시점·환경·장비·PASS/FAIL·증거 경로를 남긴다. SIL의 가상 출력과 HIL의 실제 GPIO 파형은 구분한다.
+- **구현 범위:** D-14는 **시험용 가상 고장 주입·응답**이지 물리적 LED 단선·단락 자동 검출이 아니다. 선택한 출력 강제 OFF가 실차의 안전 상태라는 주장도 하지 않는다.
+- **진입/완료 기준:** 파일 생성만으로 단계를 완료 처리하지 않는다. 실제로 수행·검토했으며 다음 단계에서 사용할 수 있는 근거가 있어야 한다.
+- **커밋:** 영문 Conventional Commit 접두사 + 한글 제목, 관련 프로세스는 `docs: [SYS.2] ...`, `feat: [SWE.3] ...`, `test: [SWE.4] ...`처럼 명시. 의미 있는 작업 단위로 묶고 사소한 문구 수정만으로 커밋을 남발하지 않는다.

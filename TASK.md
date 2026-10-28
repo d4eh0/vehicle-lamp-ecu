@@ -20,13 +20,12 @@
 - [x] 선택 근거 및 대안 기록
 - **산출물:** [`docs/decision-log.md`](docs/decision-log.md)
 
-### SYS.2 — 시스템 요구사항 분석 ★ 현재
-- [x] 시스템 입출력 정의
-- [x] `SYS-001~020` 요구사항 초안 작성
-- [x] 미등·제동등 진리표 및 정량적 동작 기준 정리
-- [ ] 요구사항 충돌·누락 및 시험 조건 검토
-- [ ] 요구사항 최종 확정
-- **산출물:** [`docs/system-requirements.md`](docs/system-requirements.md)
+### SYS.2 — 시스템 요구사항 분석 ★ 진행 중
+- [ ] 시스템 입력·출력 및 기능 경계 확정
+- [ ] D-01~D-14를 바탕으로 기능별 요구사항 검토 (기존 SYS-001~020 초안 활용)
+- [ ] 미등·제동등 진리표와 타이밍·PWM 수용 기준 검토
+- [ ] 요구사항 충돌·누락·시험 조건 확인 후 최종 확정
+- **초안:** [`docs/system-requirements.md`](docs/system-requirements.md)
 
 ### SYS.3 — 시스템 아키텍처 설계
 - [ ] STM32·스위치·후방 LED·전원·UNO Q 구성도 작성

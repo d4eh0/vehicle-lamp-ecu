@@ -1,19 +1,36 @@
 # Vehicle Lamp ECU
 
-STM32F103C8T6 기반 **후방 통합 램프 ECU** 학습·포트폴리오 프로젝트.
+STM32F103C8T6 기반 후방 램프 제어 시스템.
 
-방향지시등, 비상등, 미등·제동등 공용 PWM, 후진등, 중앙 보조제동등(CHMSL)을 구현하고 **PC SIL 및 STM32 + Arduino UNO Q Custom HIL**로 기능과 출력 시간을 검증할 계획이다.
+후방 방향지시등, 비상등, 미등·제동등, 후진등, 중앙 보조제동등(CHMSL)을 제어한다. 기능별 요구사항을 정의하고 Embedded C로 구현한 뒤 SIL과 HIL로 검증한다.
 
-## 진행 상태
+## 주요 기능
 
-- **완료:** D-01~D-14 사전 기능·타이밍·오류 처리 정책 확정
-- **진행 중:** SYS.2 시스템 요구사항 초안 검토
-- **미완료:** 하드웨어 설계, 펌웨어 구현, SIL/HIL 테스트 및 실측
+- 좌·우 방향지시등 및 비상등 제어
+- PWM 기반 미등·제동등 밝기 전환
+- 후진등 및 중앙 보조제동등 제어
+- 시동 상태에 따른 출력 제어
+- 테스트용 가상 고장 주입 및 오류 기록
+
+## 개발 환경
+
+- MCU: STM32F103C8T6
+- Language: C
+- IDE: STM32CubeIDE
+- SIL: PC 네이티브 테스트 (예정)
+- HIL: Arduino UNO Q + STM32 (예정)
+
+## 진행 현황
+
+- [x] SYS.1 요구사항 도출
+- [ ] SYS.2 시스템 요구사항 분석 (초안 작성)
+- [ ] SYS.3 시스템 아키텍처 설계
+- [ ] SWE.1~3 SW 설계 및 구현
+- [ ] SWE.4~6 SIL 검증
+- [ ] SYS.4~5 HIL 검증
 
 ## 문서
 
-- [개발 체크리스트](TASK.md)
-- [설계 결정 기록](docs/decision-log.md)
-- [시스템 요구사항 초안](docs/system-requirements.md)
-
-> Automotive SPICE의 프로세스 구조를 학습용으로 참고하며, 정식 평가·인증, AUTOSAR 또는 ISO 26262 준수를 주장하지 않는다.
+- [TASK](TASK.md)
+- [Decision Log](docs/decision-log.md)
+- [System Requirements](docs/system-requirements.md)

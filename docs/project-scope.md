@@ -37,3 +37,7 @@ CAN FD는 MCU·컨트롤러 변경을 포함한 후속 검토 범위.
 전체 응답 목표: 물리 조작→출력 ≤50 ms. 외부 BCM 처리·CAN 전달·ECU 처리 포함.
 ECU 단독 SW 응답 기준과 구분.
 
+![입출력 환경](../diagrams/environment-context.png)
+
+[diagrams.net 원본](../diagrams/environment-context.drawio)
+

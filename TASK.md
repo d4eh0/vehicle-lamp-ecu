@@ -15,3 +15,6 @@
 
 시험 환경: PC SIL·실물 보드·HIL 구성 계획. 단계와 실행 환경의 구분.
 완료 표시 기준: 해당 산출물 및 검토·실행 근거의 존재.
+
+도구: diagrams.net·SavvyCAN·cantools·CubeMX·KiCad·Wokwi.
+Wokwi: 지원 범위 내 LED/GPIO/PWM 보조 확인. 실제 CAN·전기적 검증 대체 제외.

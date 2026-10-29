@@ -35,6 +35,6 @@ CAN FD Light는 일반 CAN FD와 다른 경량 통신 방식으로, 현재 프�
 | HIL | UNO Q CAN 송신 및 출력 파형 계측 방법 |
 | 시험 진단 | UART 고장 주입 명령 형식, 진단 LED 점멸 간격 |
 
-전송 주기 50ms, 통신 두절 200ms 및 램프 오류 대응은 [시스템 요구사항](system-requirements.md)에 정의한다.
+전송 주기 50ms, 통신 두절 200ms 및 램프 오류 대응은 [시스템 요구사항](%5BSYS.2%5Dsystem-requirements.md)에 정의한다.
 
-기능 요구사항은 [SYS.1](stakeholder-requirements.md), 수치 기준과 검증 항목은 [SYS.2](system-requirements.md)를 따른다.
+기능 요구사항은 [SYS.1](%5BSYS.1%5Dstakeholder-requirements.md), 수치 기준과 검증 항목은 [SYS.2](%5BSYS.2%5Dsystem-requirements.md)를 따른다.

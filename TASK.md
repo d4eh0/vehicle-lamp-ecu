@@ -24,16 +24,33 @@
 - [x] SYS-001~027 및 검증 기준 정리
 - **문서:** [SYS.2 시스템 요구사항](docs/system-requirements.md)
 
+## SYS.1·SYS.2 산출물 보강 — SYS.3 착수 전
+
+- [ ] **SYS.1** — 시스템 컨텍스트 다이어그램 작성: diagrams.net `.drawio` 원본 및 GitHub용 `.svg` 출력. 개발 대상 ECU와 외부 BCM·스위치·후방 램프의 경계 명시
+- [ ] **SYS.2** — 방향지시·비상등 우선순위/복귀 상태도 작성: Mermaid `.mmd` 원본 및 `.svg` 출력
+- [ ] **SYS.2** — 정상 명령·CAN 타임아웃·재부팅 복구 시퀀스 작성: Mermaid `.mmd` 및 `.svg`
+- [ ] **SYS.2** — 동작 흐름도 작성: Mermaid `.mmd` 및 `.svg`, 핵심 제어·오류 판단 단계 표현
+- [x] **SYS.2** — 기존 `system-requirements.md`의 STK↔SYS 표를 STK→SYS→TC 계획 매트릭스로 확장
+- [ ] 다이어그램 원본과 렌더링 파일을 GitHub에 함께 보관하고, SYS.1·2 문서/README에 필요한 것만 연결
+- [ ] 도식·시험 케이스 ID가 SYS.1 STK-001~016 / SYS.2 SYS-001~027과 모순되지 않는지 검토
+
+여기서는 요구사항 자체를 재설계하지 않는다. **SYS.1·SYS.2 정의는 완료 상태로 유지**하고, 시각화와 계획 산출물만 보강한다.
+
 ## 부품 관리
 
 - [x] 보유 장비·기존 부품 키트 및 10/27 첫 주문 내역 정리 — [부품 명세](docs/parts.md)
 - [ ] 주문 옵션별 실제 수량 및 현재 잔여 재고 확인
 - [ ] SYS.2 확정 후 SYS.3에서 회로·핀맵과 필요 부품(BOM) 확정
 
-## 다음 작업 — SYS.3
+## 후속 작업 — SYS.3
 
+- [ ] diagrams.net `.drawio` 시스템 상세 블록도 및 인터페이스 구성도 설계
+- [ ] CAN DBC(`.dbc`) 메시지 명세 및 cantools 인코딩·디코딩 검증
 - [ ] CAN ID, DLC, 신호 비트 배치 및 비트레이트 설계
+- [ ] STM32CubeMX `.ioc` 핀맵·클럭·CAN/UART/PWM 구성 검토
+- [ ] KiCad `.kicad_sch` 회로도 설계 및 ERC·전원/구동 회로 검토
 - [ ] CAN 트랜시버·종단저항·LED 구동회로와 GPIO/PWM 핀맵 설계
+- [ ] Wokwi로 지원 가능한 LED/GPIO/PWM 동작만 보조 시뮬레이션 (CAN 실물 검증 대체 금지)
 - [ ] ECU/BCM 전원·UART 시험 인터페이스 및 HIL 계측 방법 설계
 
 ## 이후 작업

@@ -1,5 +1,9 @@
 # SYS.1 — 후방 램프 ECU 요구사항
 
+![후방 램프 ECU 시스템 컨텍스트](../diagrams/%5BSYS.1%5Dsystem-context.svg)
+
+[다이어그램 편집 원본](../diagrams/%5BSYS.1%5Dsystem-context.drawio)
+
 ## 1. 무엇을 개발할 것인가?
 
 차량 **후방 램프를 제어하는 독립 ECU**를 개발한다. BCM에서 램프를 직접 구동하는 방식 대신, BCM이 전달한 명령을 후방 램프 ECU가 처리하는 구조를 채택한다.
@@ -73,4 +77,5 @@
 | 기본 통신 | Classical CAN |
 | 통신 확장 | CAN FD 별도 검토 |
 | 검증 | PC SIL 및 실물 HIL |
+
 

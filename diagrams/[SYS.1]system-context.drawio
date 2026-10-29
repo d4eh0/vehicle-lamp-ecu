@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram id="system-context" name="System context">
+    <mxGraphModel dx="1652" dy="927" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1400" pageHeight="600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="development-boundary" parent="1" value="" vertex="1" style="rounded=0;html=0;fillColor=none;strokeColor=#78958a;strokeWidth=1.4;dashed=1;dashPattern=5 4;">
+          <mxGeometry x="680" y="140" width="290" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="input" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e6eef7;strokeColor=#8a9fb3;strokeWidth=1.2;fontColor=#252e36;fontFamily=NanumGothic;fontSize=16;spacing=12;roundedPerimeter=1;fillStyle=auto;" value="" vertex="1">
+          <mxGeometry height="240" width="190" x="10" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="bcm" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e6eef7;strokeColor=#8a9fb3;strokeWidth=1.2;fontFamily=NanumGothic;fontSize=16;spacing=12;roundedPerimeter=1;fillStyle=auto;fontColor=#252e36;textShadow=0;" value="" vertex="1">
+          <mxGeometry height="200" width="210" x="320" y="170" as="geometry" />
+        </mxCell>
+        <mxCell id="ecu" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e0ece7;strokeColor=#78958a;strokeWidth=1.5;fontFamily=NanumGothic;fontSize=16;spacing=12;verticalAlign=top;spacingTop=16;roundedPerimeter=1;glass=0;shadow=0;multiple=0;fontColor=#252e36;" value="" vertex="1">
+          <mxGeometry height="220" width="250" x="700" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="mcu" parent="ecu" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#f6f7f8;strokeColor=#737d87;strokeWidth=1.2;fontColor=#252e36;fontFamily=NanumGothic;fontSize=15;spacing=12;roundedPerimeter=1;" value="•CAN 수신&#10;•램프 제어&#10;•진단" vertex="1">
+          <mxGeometry height="101.54" width="170" x="40" y="88.46" as="geometry" />
+        </mxCell>
+        <mxCell id="lamps" parent="1" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e6eef7;strokeColor=#8a9fb3;strokeWidth=1.2;fontColor=#252e36;fontFamily=NanumGothic;fontSize=16;spacing=12;roundedPerimeter=1;" value="" vertex="1">
+          <mxGeometry height="240" width="230" x="710" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="input" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#58636e;strokeWidth=1.2;fontColor=#303b45;fontFamily=NanumGothic;fontSize=14;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="bcm" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="bcm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#58636e;strokeWidth=1.2;fontColor=#303b45;fontFamily=NanumGothic;fontSize=13;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" target="ecu" value="Classical CAN&#10;LAMP_COMMAND">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="ecu" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=0;endArrow=block;endFill=1;strokeColor=#58636e;strokeWidth=1.2;fontColor=#303b45;fontFamily=NanumGothic;fontSize=13;labelBackgroundColor=#ffffff;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="lamps" value="GPIO / PWM">
+          <mxGeometry relative="1" x="-0.1429" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="970" y="260" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U2X3Rr_M4pqmuxYBkc-h-1" parent="bcm" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#f6f7f8;strokeColor=#737d87;strokeWidth=1.2;fontColor=#252e36;fontFamily=NanumGothic;fontSize=15;spacing=12;roundedPerimeter=1;align=center;verticalAlign=middle;" value="•입력 디바운싱&#10;•상태 관리&#10;•CAN 명령 송신" vertex="1">
+          <mxGeometry height="90" width="160" x="25.0" y="90.0" as="geometry" />
+        </mxCell>
+        <mxCell id="input-title" parent="input" value="운전자 조작 입력" vertex="1" style="html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=NanumGothic;fontSize=18;fontColor=#252e36;fontStyle=0;align=center;verticalAlign=top;spacing=0;">
+          <mxGeometry x="12" y="42.5" width="166.0" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="input-body" parent="input" value="IGN&#10;TURN&#10;HAZARD&#10;TAIL&#10;BRAKE&#10;REVERSE" vertex="1" style="html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=NanumGothic;fontSize=15;fontColor=#252e36;fontStyle=0;align=center;verticalAlign=top;spacing=0;">
+          <mxGeometry x="12" y="83.5" width="166.0" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="bcm-title" parent="bcm" value="BCM Simulator" vertex="1" style="html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=NanumGothic;fontSize=18;fontColor=#252e36;fontStyle=0;align=center;verticalAlign=top;spacing=0;">
+          <mxGeometry x="12" y="32.0" width="186.0" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="bcm-body" parent="bcm" value="(Arduino UNO Q)" vertex="1" style="html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=NanumGothic;fontSize=15;fontColor=#252e36;fontStyle=0;align=center;verticalAlign=top;spacing=0;">
+          <mxGeometry x="12" y="54.0" width="186.0" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="ecu-title" parent="ecu" value="Rear Lamp ECU" vertex="1" style="html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=NanumGothic;fontSize=18;fontColor=#252e36;fontStyle=0;align=center;verticalAlign=top;spacing=0;">
+          <mxGeometry x="12" y="25.0" width="226.0" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="ecu-body" parent="ecu" value="(STM32F103C8T6)" vertex="1" style="html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=NanumGothic;fontSize=15;fontColor=#252e36;fontStyle=0;align=center;verticalAlign=top;spacing=0;">
+          <mxGeometry x="12" y="47.0" width="226.0" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="lamps-title" parent="lamps" value="후방 램프 6채널" vertex="1" style="html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=NanumGothic;fontSize=18;fontColor=#252e36;fontStyle=0;align=center;verticalAlign=top;spacing=0;">
+          <mxGeometry x="12" y="42.5" width="206.0" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="lamps-body" parent="lamps" value="TURN_L&#10;TURN_R&#10;TAIL_STOP_L&#10;TAIL_STOP_R&#10;REVERSE_LAMP&#10;CHMSL" vertex="1" style="html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=NanumGothic;fontSize=15;fontColor=#252e36;fontStyle=0;align=center;verticalAlign=top;spacing=0;">
+          <mxGeometry x="12" y="83.5" width="206.0" height="122" as="geometry" />
+        </mxCell>
+        <mxCell id="development-label" parent="1" value="개발 대상" vertex="1" style="html=0;whiteSpace=wrap;fillColor=none;strokeColor=none;fontFamily=NanumGothic;fontSize=15;fontColor=#59776b;fontStyle=1;align=center;verticalAlign=top;spacing=0;">
+          <mxGeometry x="680" y="108" width="290" height="26" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

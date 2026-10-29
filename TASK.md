@@ -18,3 +18,13 @@
 
 도구: diagrams.net·SavvyCAN·cantools·CubeMX·KiCad·Wokwi.
 Wokwi: 지원 범위 내 LED/GPIO/PWM 보조 확인. 실제 CAN·전기적 검증 대체 제외.
+
+## 다음 작업
+
+1. 기능·성능·진단 조건 검토
+2. SW 컴포넌트·인터페이스·실행 방식 설계
+3. 외부 회로 요구·HW/SW 경계 확인
+4. CubeMX 자원 배정·KiCad 회로·상세 설계·코드
+5. 단위·통합·요구사항 시험과 결함 수정
+
+실제 램프 펌웨어·계측 결과 없음. 수치 목표와 측정 결과의 구분.

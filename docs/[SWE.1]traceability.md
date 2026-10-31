@@ -25,5 +25,5 @@
 | SWR-018 | PRJ-012 | Diagnostics | 미작성 |
 | SWR-019 | PRJ-002,003,016 | AppLoop / CanPort / OutputPort | 미작성 |
 
-HW 요구사항은 [HWE.1](hardware-software-interface.md)에서 프로젝트 입력과 연결.
+HW 요구사항은 [HWE.1]([HWE.1]requirements.md)에서 프로젝트 입력과 연결.
 프로젝트 입력 전체의 할당 누락·과도한 할당 검토, 코드·실행 결과 연결은 후속 작업.

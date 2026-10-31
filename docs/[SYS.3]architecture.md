@@ -1,13 +1,10 @@
-# 시스템 아키텍처 (SYS.3 설계 전 구성안)
+# 시스템 아키텍처 (SYS.3 설계 초안)
 
 ## 1. 시스템 블록
 
-    [운전자 스위치]         [BCM 시뮬레이터]         [후방 램프 ECU]        [후방 LED]
-    IGN / 레버 / 비상등 ──► Arduino UNO Q ──CAN──► STM32F103C8T6 ──► LED 드라이버
-    미등 / 브레이크 / R      ├─ 디바운싱           ├─ CAN 수신·검사        ├─ TURN_L / R
-                            ├─ 비상등 토글        ├─ 상태머신·우선순위    ├─ TAIL_STOP_L / R
-                            └─ CAN 명령 송신      ├─ PWM / 점멸          ├─ REVERSE_LAMP
-                                                 └─ 진단·기록           └─ CHMSL
+![SYS.3 시스템 정적 아키텍처](../diagrams/%5BSYS.3%5Dstatic-architecture.svg)
+
+[draw.io 편집 원본](../diagrams/%5BSYS.3%5Dstatic-architecture.drawio)
 
 - BCM 시뮬레이터는 램프 관련 명령만 모사한다. 실제 차량의 BCM 전체 기능은 포함하지 않는다.
 - Rear Lamp ECU는 MCU 단독이 아니라 CAN 트랜시버, LED 구동회로, 전원, 펌웨어를 포함하는 제어장치 시제품이다.

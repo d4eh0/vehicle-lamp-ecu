@@ -1,0 +1,157 @@
+{
+  "scope": "Offline DBC and reference acceptance-rule design checks only",
+  "status": "passed",
+  "executed_at_utc": "2026-10-31T08:44:18.454921+00:00",
+  "python": "3.12.14",
+  "cantools": "45.1.2",
+  "dbc_sha256": "99e6c94fc456441f3e821d29814698d212dd1804910e1f79038f987145a2931d",
+  "normal_roundtrips": 96,
+  "raw_payloads_classified": 256,
+  "normal_payload_count": 96,
+  "invalid_payload_count": 160,
+  "malformed_frame_checks": [
+    "wrong_id",
+    "dlc_zero",
+    "dlc_two",
+    "empty_payload",
+    "excess_payload",
+    "extended_frame",
+    "remote_frame",
+    "fd_frame",
+    "error_frame"
+  ],
+  "strict_encoder_rejections": [
+    "TURN",
+    "IGN"
+  ],
+  "examples": [
+    {
+      "name": "ALL_OFF",
+      "id": "0x100",
+      "dlc": 1,
+      "data_hex": "00",
+      "signals": {
+        "IGN": 0,
+        "TURN": 0,
+        "HAZARD": 0,
+        "TAIL": 0,
+        "BRAKE": 0,
+        "REVERSE": 0,
+        "RESERVED": 0
+      }
+    },
+    {
+      "name": "IGN_LEFT",
+      "id": "0x100",
+      "dlc": 1,
+      "data_hex": "03",
+      "signals": {
+        "IGN": 1,
+        "TURN": 1,
+        "HAZARD": 0,
+        "TAIL": 0,
+        "BRAKE": 0,
+        "REVERSE": 0,
+        "RESERVED": 0
+      }
+    },
+    {
+      "name": "IGN_RIGHT",
+      "id": "0x100",
+      "dlc": 1,
+      "data_hex": "05",
+      "signals": {
+        "IGN": 1,
+        "TURN": 2,
+        "HAZARD": 0,
+        "TAIL": 0,
+        "BRAKE": 0,
+        "REVERSE": 0,
+        "RESERVED": 0
+      }
+    },
+    {
+      "name": "HAZARD_IGN_OFF",
+      "id": "0x100",
+      "dlc": 1,
+      "data_hex": "08",
+      "signals": {
+        "IGN": 0,
+        "TURN": 0,
+        "HAZARD": 1,
+        "TAIL": 0,
+        "BRAKE": 0,
+        "REVERSE": 0,
+        "RESERVED": 0
+      }
+    },
+    {
+      "name": "TAIL_ONLY",
+      "id": "0x100",
+      "dlc": 1,
+      "data_hex": "10",
+      "signals": {
+        "IGN": 0,
+        "TURN": 0,
+        "HAZARD": 0,
+        "TAIL": 1,
+        "BRAKE": 0,
+        "REVERSE": 0,
+        "RESERVED": 0
+      }
+    },
+    {
+      "name": "BRAKE_ONLY",
+      "id": "0x100",
+      "dlc": 1,
+      "data_hex": "20",
+      "signals": {
+        "IGN": 0,
+        "TURN": 0,
+        "HAZARD": 0,
+        "TAIL": 0,
+        "BRAKE": 1,
+        "REVERSE": 0,
+        "RESERVED": 0
+      }
+    },
+    {
+      "name": "IGN_REVERSE",
+      "id": "0x100",
+      "dlc": 1,
+      "data_hex": "41",
+      "signals": {
+        "IGN": 1,
+        "TURN": 0,
+        "HAZARD": 0,
+        "TAIL": 0,
+        "BRAKE": 0,
+        "REVERSE": 1,
+        "RESERVED": 0
+      }
+    },
+    {
+      "name": "ALL_REQUESTS_RIGHT",
+      "id": "0x100",
+      "dlc": 1,
+      "data_hex": "7D",
+      "signals": {
+        "IGN": 1,
+        "TURN": 2,
+        "HAZARD": 1,
+        "TAIL": 1,
+        "BRAKE": 1,
+        "REVERSE": 1,
+        "RESERVED": 0
+      }
+    }
+  ],
+  "not_executed": [
+    "ECU firmware tests",
+    "Physical CAN communication",
+    "50 ms transmission scheduling",
+    "200 ms timeout behavior",
+    "10 ms / 50 ms response timing",
+    "LED output behavior"
+  ]
+}

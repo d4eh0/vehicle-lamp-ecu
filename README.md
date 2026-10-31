@@ -8,3 +8,5 @@ STM32F103C8T6 기반 후방 램프 제어 소프트웨어·외부 연결 회로.
 공식 프로세스 평가·적합성 주장 제외.
 
 [개발 계획](TASK.md) · [문서 목차](docs/README.md)
+
+DBC·SavvyCAN·cantools: 오프라인 검토 완료. 램프 펌웨어·실물 CAN·SIL/HIL 결과 미완료.

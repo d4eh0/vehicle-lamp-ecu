@@ -1,0 +1,46 @@
+VERSION "SYS3 CAN interface draft 1"
+
+NS_ :
+    CM_
+    BA_DEF_
+    BA_
+    BA_DEF_DEF_
+    VAL_
+
+BS_:
+
+BU_: BCM_SIM REAR_LAMP_ECU
+
+BO_ 256 LAMP_COMMAND: 1 BCM_SIM
+ SG_ IGN : 0|1@1+ (1,0) [0|1] "" REAR_LAMP_ECU
+ SG_ TURN : 1|2@1+ (1,0) [0|2] "" REAR_LAMP_ECU
+ SG_ HAZARD : 3|1@1+ (1,0) [0|1] "" REAR_LAMP_ECU
+ SG_ TAIL : 4|1@1+ (1,0) [0|1] "" REAR_LAMP_ECU
+ SG_ BRAKE : 5|1@1+ (1,0) [0|1] "" REAR_LAMP_ECU
+ SG_ REVERSE : 6|1@1+ (1,0) [0|1] "" REAR_LAMP_ECU
+ SG_ RESERVED : 7|1@1+ (1,0) [0|1] "" REAR_LAMP_ECU
+
+CM_ "Project draft: Classical CAN, standard 11-bit identifier, nominal bitrate 500000 bit/s. NominalBitrate is project metadata, not automatic CAN-controller configuration.";
+CM_ BO_ 256 "Full current input state. Send on state change immediately and cyclically every 50 ms. Receiver validates ID, frame type, DLC, TURN and RESERVED. Invalid messages do not refresh the last-valid-receive time. Timeout is 200 ms from the last valid receive. These runtime policies require application software.";
+CM_ SG_ 256 TURN "Value 3 is invalid. IGN=OFF does not invalidate LEFT or RIGHT; the ECU applies IGN gating.";
+CM_ SG_ 256 HAZARD "Absolute ON/OFF state, not a toggle event. BCM owns the button-toggle state.";
+CM_ SG_ 256 RESERVED "Transmit zero. A received one invalidates the whole command. DBC decoding alone does not enforce this policy.";
+
+BA_DEF_ "BusType" STRING;
+BA_DEF_ "NominalBitrate" INT 10000 1000000;
+BA_DEF_ BO_ "GenMsgCycleTime" INT 0 65535;
+BA_DEF_DEF_ "BusType" "CAN";
+BA_DEF_DEF_ "NominalBitrate" 500000;
+BA_DEF_DEF_ "GenMsgCycleTime" 0;
+BA_ "BusType" "CAN";
+BA_ "NominalBitrate" 500000;
+BA_ "GenMsgCycleTime" BO_ 256 50;
+
+VAL_ 256 IGN 0 "OFF" 1 "ON";
+VAL_ 256 TURN 0 "OFF" 1 "LEFT" 2 "RIGHT";
+VAL_ 256 HAZARD 0 "OFF" 1 "ON";
+VAL_ 256 TAIL 0 "OFF" 1 "ON";
+VAL_ 256 BRAKE 0 "RELEASED" 1 "PRESSED";
+VAL_ 256 REVERSE 0 "NOT_R" 1 "R";
+VAL_ 256 RESERVED 0 "ZERO_REQUIRED" 1 "INVALID";
+

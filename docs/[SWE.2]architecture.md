@@ -7,7 +7,7 @@
 
 ![SW 컴포넌트](../diagrams/software-static.png)
 
-[diagrams.net 원본](../diagrams/software-architecture.drawio)
+[diagrams.net 원본](../diagrams/source/software-architecture.drawio)
 
 | 컴포넌트 | 책임 | 주요 인터페이스 |
 |---|---|---|

@@ -12,4 +12,4 @@
 
 예정 산출물: KiCad `.kicad_sch`, 실제 사용 부품 BOM, 선정·계산 근거, ERC 결과·미해결 항목.
 보유 부품 전체 목록과 실제 회로 BOM의 구분. PCB 레이아웃·제조 데이터는 이번 범위 제외.
-[기존 장치 구성도](../diagrams/hardware-overview.drawio)는 연결 개요이며 회로 상세 설계 완료 근거가 아님.
+[기존 장치 구성도](../diagrams/source/hardware-overview.drawio)는 연결 개요이며 회로 상세 설계 완료 근거가 아님.

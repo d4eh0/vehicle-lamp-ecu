@@ -1,7 +1,7 @@
 # SWE.1 동작 시나리오
 
 대상: 외부 입력에 대한 ECU의 관측 가능한 동작. SW 내부 모듈 시퀀스와 구분.
-[diagrams.net 편집 원본](../diagrams/behavior-reference.drawio).
+[diagrams.net 편집 원본](../diagrams/source/behavior-reference.drawio).
 
 ## 정상 명령
 

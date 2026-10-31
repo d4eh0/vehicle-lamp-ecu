@@ -2,7 +2,7 @@
 
 ![장치 구성](../diagrams/hardware-overview.png)
 
-[diagrams.net 원본](../diagrams/hardware-overview.drawio) · [SVG](../diagrams/hardware-overview.svg)
+[diagrams.net 원본](../diagrams/source/hardware-overview.drawio) · [SVG](../diagrams/hardware-overview.svg)
 
 | 요소 | 역할 |
 |---|---|

@@ -39,6 +39,6 @@ ECU 단독 SW 응답 기준과 구분.
 
 ![입출력 환경](../diagrams/environment-context.png)
 
-[diagrams.net 원본](../diagrams/environment-context.drawio)
+[diagrams.net 원본](../diagrams/source/environment-context.drawio)
 
 상세 장치 구성: [환경 문서](environment.md).

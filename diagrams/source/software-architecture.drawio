@@ -1,73 +1,73 @@
 <?xml version='1.0' encoding='utf-8'?>
 <mxfile host="app.diagrams.net" type="device">
-  <diagram name="01 Static" id="01-Static">
+  <diagram name="01 정적 구조" id="01-Static">
     <mxGraphModel page="1" pageWidth="1200" pageHeight="770" grid="1" gridSize="10" background="#ffffff">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="2" parent="1" vertex="1" value="SWE.2  Software components (draft)" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;text;align=left;fontSize=26;fontStyle=1;strokeColor=none;fillColor=none;">
+        <mxCell id="2" parent="1" vertex="1" value="SWE.2  소프트웨어 구성 (초안)" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;text;align=left;fontSize=26;fontStyle=1;strokeColor=none;fillColor=none;">
           <mxGeometry x="35" y="20" width="1120" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="3" parent="1" vertex="1" value="AppLoop&#10;processing order / output inhibit" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
+        <mxCell id="3" parent="1" vertex="1" value="AppLoop&#10;처리 순서·출력 차단" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
           <mxGeometry x="420" y="90" width="360" height="75" as="geometry" />
         </mxCell>
-        <mxCell id="4" parent="1" vertex="1" value="CanPort&#10;CAN frame / metadata" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
+        <mxCell id="4" parent="1" vertex="1" value="CanPort&#10;CAN 프레임 수신" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
           <mxGeometry x="50" y="235" width="230" height="85" as="geometry" />
         </mxCell>
-        <mxCell id="5" parent="1" vertex="1" value="CommandRx&#10;validation / latest command / age" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
+        <mxCell id="5" parent="1" vertex="1" value="CommandRx&#10;검사·최신 명령·수신 시각" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
           <mxGeometry x="350" y="235" width="280" height="85" as="geometry" />
         </mxCell>
-        <mxCell id="6" parent="1" vertex="1" value="LampControl&#10;mode / blink / duty" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
+        <mxCell id="6" parent="1" vertex="1" value="LampControl&#10;모드·점멸·듀티 계산" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
           <mxGeometry x="700" y="235" width="240" height="85" as="geometry" />
         </mxCell>
-        <mxCell id="7" parent="1" vertex="1" value="OutputPort&#10;GPIO / PWM / status LED" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
+        <mxCell id="7" parent="1" vertex="1" value="OutputPort&#10;GPIO·PWM·진단 LED 출력" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
           <mxGeometry x="890" y="500" width="260" height="85" as="geometry" />
         </mxCell>
-        <mxCell id="8" parent="1" vertex="1" value="UartPort&#10;test commands" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
+        <mxCell id="8" parent="1" vertex="1" value="UartPort&#10;시험 명령 수신" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
           <mxGeometry x="50" y="500" width="230" height="85" as="geometry" />
         </mxCell>
-        <mxCell id="9" parent="1" vertex="1" value="Diagnostics&#10;fault mask / events / LED state" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
+        <mxCell id="9" parent="1" vertex="1" value="Diagnostics&#10;가상 고장·기록·진단 LED" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
           <mxGeometry x="350" y="500" width="300" height="85" as="geometry" />
         </mxCell>
-        <mxCell id="10" parent="1" edge="1" value="frame" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=orthogonalEdgeStyle;" source="4" target="5">
+        <mxCell id="10" parent="1" edge="1" value="수신 프레임" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=orthogonalEdgeStyle;" source="4" target="5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="11" parent="1" edge="1" value="command + time" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="11" parent="1" edge="1" value="명령·시각" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="780" y="110" as="sourcePoint" />
             <mxPoint x="820" y="235" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="12" parent="1" edge="1" value="requested outputs" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="12" parent="1" edge="1" value="계산 출력" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="700" y="235" as="sourcePoint" />
             <mxPoint x="740" y="165" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="13" parent="1" edge="1" value="test input" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=orthogonalEdgeStyle;" source="8" target="9">
+        <mxCell id="13" parent="1" edge="1" value="시험 입력" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=orthogonalEdgeStyle;" source="8" target="9">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="14" parent="1" edge="1" value="final output / inhibit" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=orthogonalEdgeStyle;" source="3" target="7">
+        <mxCell id="14" parent="1" edge="1" value="최종 출력·차단" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=orthogonalEdgeStyle;" source="3" target="7">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="15" parent="1" edge="1" value="command state" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=orthogonalEdgeStyle;" source="5" target="3">
+        <mxCell id="15" parent="1" edge="1" value="명령 상태" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=orthogonalEdgeStyle;" source="5" target="3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="16" parent="1" edge="1" value="fault state / events" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=orthogonalEdgeStyle;" source="9" target="3">
+        <mxCell id="16" parent="1" edge="1" value="고장 상태·이벤트" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=orthogonalEdgeStyle;" source="9" target="3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="17" parent="1" vertex="1" value="MCU-dependent ports: CanPort / UartPort / OutputPort&#10;PC-testable logic: CommandRx / LampControl / Diagnostics" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;strokeColor=none;fillColor=#F2F4F5;fontSize=17;">
+        <mxCell id="17" parent="1" vertex="1" value="MCU 의존부: CanPort / UartPort / OutputPort&#10;PC 시험 대상: CommandRx / LampControl / Diagnostics" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;strokeColor=none;fillColor=#F2F4F5;fontSize=17;">
           <mxGeometry x="45" y="660" width="1100" height="65" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="02 Normal" id="02-Normal">
+  <diagram name="02 정상 명령" id="02-Normal">
     <mxGraphModel page="1" pageWidth="1200" pageHeight="770" grid="1" gridSize="10" background="#ffffff">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="2" parent="1" vertex="1" value="SWE.2  Normal command processing (draft)" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;text;align=left;fontSize=26;fontStyle=1;strokeColor=none;fillColor=none;">
+        <mxCell id="2" parent="1" vertex="1" value="SWE.2  정상 명령 처리 (초안)" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;text;align=left;fontSize=26;fontStyle=1;strokeColor=none;fillColor=none;">
           <mxGeometry x="35" y="20" width="1120" height="45" as="geometry" />
         </mxCell>
         <mxCell id="3" parent="1" vertex="1" value="CanPort" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
@@ -115,37 +115,37 @@
             <mxPoint x="1110.0" y="715" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="13" parent="1" edge="1" value="frame + metadata + receive time" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="13" parent="1" edge="1" value="프레임·속성·수신 시각" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="90.0" y="205" as="sourcePoint" />
             <mxPoint x="345.0" y="205" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="14" parent="1" vertex="1" value="validate whole frame" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;fillColor=#F6F7F8;strokeColor=#9DA8B1;fontSize=15;">
+        <mxCell id="14" parent="1" vertex="1" value="프레임 전체 검사" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;fillColor=#F6F7F8;strokeColor=#9DA8B1;fontSize=15;">
           <mxGeometry x="235.0" y="249" width="220" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="15" parent="1" edge="1" value="latest valid command / age" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="15" parent="1" edge="1" value="최신 유효 명령·수신 시각" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="345.0" y="333" as="sourcePoint" />
             <mxPoint x="600.0" y="333" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="16" parent="1" edge="1" value="command + now_ms" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="16" parent="1" edge="1" value="명령·현재 시각" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="600.0" y="397" as="sourcePoint" />
             <mxPoint x="855.0" y="397" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="17" parent="1" edge="1" value="requested outputs" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="17" parent="1" edge="1" value="계산 출력" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="855.0" y="461" as="sourcePoint" />
             <mxPoint x="600.0" y="461" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="18" parent="1" vertex="1" value="startup / timeout / fault inhibit" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;fillColor=#F6F7F8;strokeColor=#9DA8B1;fontSize=15;">
+        <mxCell id="18" parent="1" vertex="1" value="초기화·두절·고장 차단" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;fillColor=#F6F7F8;strokeColor=#9DA8B1;fontSize=15;">
           <mxGeometry x="490.0" y="505" width="220" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="19" parent="1" edge="1" value="final outputs" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="19" parent="1" edge="1" value="최종 출력" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="600.0" y="589" as="sourcePoint" />
             <mxPoint x="1110.0" y="589" as="targetPoint" />
@@ -154,12 +154,12 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="03 Timeout" id="03-Timeout">
+  <diagram name="03 통신 두절·복구" id="03-Timeout">
     <mxGraphModel page="1" pageWidth="1200" pageHeight="770" grid="1" gridSize="10" background="#ffffff">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="2" parent="1" vertex="1" value="SWE.2  Communication loss and recovery (draft)" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;text;align=left;fontSize=26;fontStyle=1;strokeColor=none;fillColor=none;">
+        <mxCell id="2" parent="1" vertex="1" value="SWE.2  통신 두절·복구 (초안)" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;text;align=left;fontSize=26;fontStyle=1;strokeColor=none;fillColor=none;">
           <mxGeometry x="35" y="20" width="1120" height="45" as="geometry" />
         </mxCell>
         <mxCell id="3" parent="1" vertex="1" value="CommandRx" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
@@ -207,46 +207,46 @@
             <mxPoint x="1110.0" y="715" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="13" parent="1" edge="1" value="last valid receive time" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="13" parent="1" edge="1" value="마지막 유효 수신 시각" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="90.0" y="205" as="sourcePoint" />
             <mxPoint x="345.0" y="205" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="14" parent="1" vertex="1" value="200 ms without valid command" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;fillColor=#F6F7F8;strokeColor=#9DA8B1;fontSize=15;">
+        <mxCell id="14" parent="1" vertex="1" value="유효 명령 200 ms 무수신" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;fillColor=#F6F7F8;strokeColor=#9DA8B1;fontSize=15;">
           <mxGeometry x="235.0" y="249" width="220" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="15" parent="1" edge="1" value="all lamp outputs OFF" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="15" parent="1" edge="1" value="램프 전체 OFF" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="345.0" y="333" as="sourcePoint" />
             <mxPoint x="1110.0" y="333" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="16" parent="1" edge="1" value="communication loss event" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="16" parent="1" edge="1" value="통신 두절 기록" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="345.0" y="397" as="sourcePoint" />
             <mxPoint x="600.0" y="397" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="17" parent="1" edge="1" value="first valid command after loss" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="17" parent="1" edge="1" value="복구 후 첫 유효 명령" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="90.0" y="461" as="sourcePoint" />
             <mxPoint x="345.0" y="461" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="18" parent="1" edge="1" value="re-evaluate current inputs" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="18" parent="1" edge="1" value="현재 입력 재평가" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="345.0" y="525" as="sourcePoint" />
             <mxPoint x="855.0" y="525" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="19" parent="1" edge="1" value="fault mask retained" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="19" parent="1" edge="1" value="가상 고장 상태 유지" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="600.0" y="589" as="sourcePoint" />
             <mxPoint x="345.0" y="589" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="20" parent="1" edge="1" value="current outputs with inhibit" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="20" parent="1" edge="1" value="차단 조건 반영 출력" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="345.0" y="653" as="sourcePoint" />
             <mxPoint x="1110.0" y="653" as="targetPoint" />
@@ -255,15 +255,15 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="04 Restart" id="04-Restart">
+  <diagram name="04 초기화" id="04-Restart">
     <mxGraphModel page="1" pageWidth="1200" pageHeight="770" grid="1" gridSize="10" background="#ffffff">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="2" parent="1" vertex="1" value="SWE.2  ECU software startup (draft)" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;text;align=left;fontSize=26;fontStyle=1;strokeColor=none;fillColor=none;">
+        <mxCell id="2" parent="1" vertex="1" value="SWE.2  ECU 소프트웨어 초기화 (초안)" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;text;align=left;fontSize=26;fontStyle=1;strokeColor=none;fillColor=none;">
           <mxGeometry x="35" y="20" width="1120" height="45" as="geometry" />
         </mxCell>
-        <mxCell id="3" parent="1" vertex="1" value="Startup" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
+        <mxCell id="3" parent="1" vertex="1" value="초기화" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
           <mxGeometry x="5.0" y="100" width="170" height="60" as="geometry" />
         </mxCell>
         <mxCell id="4" parent="1" edge="1" value="" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=none;dashed=1;edgeStyle=none;">
@@ -308,43 +308,43 @@
             <mxPoint x="1110.0" y="715" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="13" parent="1" edge="1" value="initial lamp outputs OFF" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="13" parent="1" edge="1" value="램프 초기 출력 OFF" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="90.0" y="205" as="sourcePoint" />
             <mxPoint x="345.0" y="205" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="14" parent="1" edge="1" value="clear command / receive state" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="14" parent="1" edge="1" value="명령·수신 상태 초기화" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="90.0" y="269" as="sourcePoint" />
             <mxPoint x="600.0" y="269" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="15" parent="1" edge="1" value="clear RAM events / fault mask" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="15" parent="1" edge="1" value="RAM 기록·가상 고장 초기화" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="90.0" y="333" as="sourcePoint" />
             <mxPoint x="855.0" y="333" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="16" parent="1" edge="1" value="start processing" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="16" parent="1" edge="1" value="처리 시작" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="90.0" y="397" as="sourcePoint" />
             <mxPoint x="1110.0" y="397" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="17" parent="1" edge="1" value="OFF until valid command" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="17" parent="1" edge="1" value="유효 명령 전 OFF 유지" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1110.0" y="461" as="sourcePoint" />
             <mxPoint x="345.0" y="461" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="18" parent="1" edge="1" value="first valid current state" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="18" parent="1" edge="1" value="첫 유효 입력 상태" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="600.0" y="525" as="sourcePoint" />
             <mxPoint x="1110.0" y="525" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="19" parent="1" edge="1" value="evaluated outputs" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="19" parent="1" edge="1" value="계산 결과 출력" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="1110.0" y="589" as="sourcePoint" />
             <mxPoint x="345.0" y="589" as="targetPoint" />
@@ -353,12 +353,12 @@
       </root>
     </mxGraphModel>
   </diagram>
-  <diagram name="05 Fault" id="05-Fault">
+  <diagram name="05 가상 고장·해제" id="05-Fault">
     <mxGraphModel page="1" pageWidth="1200" pageHeight="770" grid="1" gridSize="10" background="#ffffff">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="2" parent="1" vertex="1" value="SWE.2  Virtual fault and clear (draft)" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;text;align=left;fontSize=26;fontStyle=1;strokeColor=none;fillColor=none;">
+        <mxCell id="2" parent="1" vertex="1" value="SWE.2  가상 고장·해제 (초안)" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;text;align=left;fontSize=26;fontStyle=1;strokeColor=none;fillColor=none;">
           <mxGeometry x="35" y="20" width="1120" height="45" as="geometry" />
         </mxCell>
         <mxCell id="3" parent="1" vertex="1" value="UartPort" style="html=0;whiteSpace=wrap;fontFamily=Arial;fontColor=#24384A;fontSize=17;align=center;verticalAlign=middle;rounded=1;strokeColor=#6385A2;fillColor=#E9F1F7;">
@@ -406,49 +406,49 @@
             <mxPoint x="1110.0" y="715" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="13" parent="1" edge="1" value="set channel virtual fault" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="13" parent="1" edge="1" value="채널 가상 고장 설정" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="90.0" y="205" as="sourcePoint" />
             <mxPoint x="345.0" y="205" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="14" parent="1" edge="1" value="fault mask + event" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="14" parent="1" edge="1" value="고장 상태·이벤트" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="345.0" y="269" as="sourcePoint" />
             <mxPoint x="600.0" y="269" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="15" parent="1" edge="1" value="requested outputs" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="15" parent="1" edge="1" value="계산 출력" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="855.0" y="333" as="sourcePoint" />
             <mxPoint x="600.0" y="333" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="16" parent="1" edge="1" value="selected channel OFF" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="16" parent="1" edge="1" value="지정 채널 OFF" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="600.0" y="397" as="sourcePoint" />
             <mxPoint x="1110.0" y="397" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="17" parent="1" edge="1" value="CLEAR channel" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="17" parent="1" edge="1" value="채널 고장 해제" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="90.0" y="461" as="sourcePoint" />
             <mxPoint x="345.0" y="461" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="18" parent="1" edge="1" value="updated fault mask + event" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="18" parent="1" edge="1" value="갱신된 고장 상태·이벤트" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="345.0" y="525" as="sourcePoint" />
             <mxPoint x="600.0" y="525" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="19" parent="1" edge="1" value="latest command + current time" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="19" parent="1" edge="1" value="최신 명령·현재 시각" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="600.0" y="589" as="sourcePoint" />
             <mxPoint x="855.0" y="589" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="20" parent="1" edge="1" value="re-evaluate timeout / startup / mask" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
+        <mxCell id="20" parent="1" edge="1" value="두절·초기화·고장 재평가" style="html=0;fontFamily=Arial;fontColor=#24384A;textBackgroundColor=#FFFFFF;fontSize=15;strokeColor=#5B6F80;endArrow=block;endFill=1;edgeStyle=none;">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="600.0" y="653" as="sourcePoint" />
             <mxPoint x="1110.0" y="653" as="targetPoint" />

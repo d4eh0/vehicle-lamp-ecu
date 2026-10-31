@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram id="sys3-static" name="동작 참고 정적 아키텍처">
+    <mxGraphModel dx="1526" dy="857" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1460" pageHeight="840" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=29;fontColor=#24384A;fontStyle=1;" value="개발 환경  장치 구성" vertex="1">
+          <mxGeometry height="48" width="1300" x="35" y="22" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" parent="1" style="rounded=1;fillColor=none;strokeColor=#96CCBA;strokeWidth=1.5;dashed=1;dashPattern=5 4;pointerEvents=0;" value="" vertex="1">
+          <mxGeometry height="530" width="830" x="330" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary-title" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=21;fontColor=#6F998A;fontStyle=1;" value="개발 대상: Rear Lamp ECU" vertex="1">
+          <mxGeometry height="30" width="760" x="388" y="169" as="geometry" />
+        </mxCell>
+        <mxCell id="power-trunk" edge="1" parent="1" style="edgeStyle=none;html=0;rounded=0;strokeColor=#A0A9AF;strokeWidth=1;endArrow=none;endFill=1;dashed=0;" value="">
+          <mxGeometry relative="1" x="0.0179" as="geometry">
+            <Array as="points">
+              <mxPoint x="475" y="470" />
+            </Array>
+            <mxPoint x="475" y="540" as="sourcePoint" />
+            <mxPoint x="1020" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="power-can" edge="1" parent="1" source="power" style="edgeStyle=none;html=0;rounded=0;strokeColor=#A0A9AF;strokeWidth=1;endArrow=block;endFill=1;dashed=0;exitX=0.421;exitY=-0.021;exitDx=0;exitDy=0;exitPerimeter=0;" target="can" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="460" y="470" as="sourcePoint" />
+            <mxPoint x="460" y="375" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="power-mcu" edge="1" parent="1" style="edgeStyle=none;html=0;rounded=0;strokeColor=#A0A9AF;strokeWidth=1;endArrow=block;endFill=1;dashed=0;" target="mcu" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="470" as="sourcePoint" />
+            <mxPoint x="680" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="power-out" edge="1" parent="1" style="edgeStyle=none;html=0;rounded=0;strokeColor=#A0A9AF;strokeWidth=1;endArrow=block;endFill=1;dashed=0;" target="output" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1020" y="470" as="sourcePoint" />
+            <mxPoint x="1030" y="375" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="bcm" parent="1" style="rounded=1;arcSize=8;html=0;fillColor=#EDF4FA;strokeColor=#7194B2;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="130" width="230" x="35" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="bcm-title" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#24384A;fontStyle=1;" value="BCM Simulator" vertex="1">
+          <mxGeometry height="32" width="214" x="43" y="274" as="geometry" />
+        </mxCell>
+        <mxCell id="bcm-body" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#24384A;fontStyle=0;" value="Arduino UNO Q&#10;입력 처리 · CAN 송신" vertex="1">
+          <mxGeometry height="68" width="210" x="45" y="312" as="geometry" />
+        </mxCell>
+        <mxCell id="can" parent="1" style="rounded=1;arcSize=8;html=0;fillColor=#E8F2ED;strokeColor=#6F998A;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="110" width="165" x="380" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="can-title" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#24384A;fontStyle=1;" value="CAN 트랜시버" vertex="1">
+          <mxGeometry height="32" width="149" x="388" y="279" as="geometry" />
+        </mxCell>
+        <mxCell id="can-body" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#24384A;fontStyle=0;" value="SN65HVD230&#10;전기 신호 변환" vertex="1">
+          <mxGeometry height="48" width="145" x="390" y="317" as="geometry" />
+        </mxCell>
+        <mxCell id="mcu" parent="1" style="rounded=1;arcSize=8;html=0;fillColor=#E8F2ED;strokeColor=#6F998A;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="175" width="270" x="600" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="mcu-title" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#24384A;fontStyle=1;" value="STM32F103C8T6" vertex="1">
+          <mxGeometry height="32" width="254" x="608" y="249" as="geometry" />
+        </mxCell>
+        <mxCell id="mcu-body" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#24384A;fontStyle=0;" value="제어 펌웨어 실행&#10;명령 검사 · 램프 제어&#10;통신 감시 · RAM 오류 기록" vertex="1">
+          <mxGeometry height="113" width="250" x="610" y="287" as="geometry" />
+        </mxCell>
+        <mxCell id="output" parent="1" style="rounded=1;arcSize=8;html=0;fillColor=#E8F2ED;strokeColor=#6F998A;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="110" width="185" x="925" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="output-title" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#24384A;fontStyle=1;" value="램프 출력 회로" vertex="1">
+          <mxGeometry height="32" width="169" x="933" y="279" as="geometry" />
+        </mxCell>
+        <mxCell id="output-body" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#24384A;fontStyle=0;" value="6채널 구동&#10;LED 전류 제한" vertex="1">
+          <mxGeometry height="48" width="165" x="935" y="317" as="geometry" />
+        </mxCell>
+        <mxCell id="lamps" parent="1" style="rounded=1;arcSize=8;html=0;fillColor=#EDF4FA;strokeColor=#7194B2;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="250" width="225" x="1200" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="lamps-title" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#24384A;fontStyle=1;" value="후방 램프 6채널" vertex="1">
+          <mxGeometry height="32" width="209" x="1208" y="209" as="geometry" />
+        </mxCell>
+        <mxCell id="lamps-body" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#24384A;fontStyle=0;" value="TURN_L / TURN_R&#10;TAIL_STOP_L / R&#10;REVERSE_LAMP&#10;CHMSL" vertex="1">
+          <mxGeometry height="188" width="205" x="1210" y="247" as="geometry" />
+        </mxCell>
+        <mxCell id="power" parent="1" style="rounded=1;arcSize=8;html=0;fillColor=#F3F5F6;strokeColor=#A0A9AF;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="100" width="195" x="380" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="power-title" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#24384A;fontStyle=1;" value="전원부" vertex="1">
+          <mxGeometry height="32" width="179" x="388" y="554" as="geometry" />
+        </mxCell>
+        <mxCell id="power-body" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#24384A;fontStyle=0;" value="개발보드 전원 사용&#10;IGN OFF에도 전원 유지" vertex="1">
+          <mxGeometry height="38" width="175" x="390" y="592" as="geometry" />
+        </mxCell>
+        <mxCell id="diag" parent="1" style="rounded=1;arcSize=8;html=0;fillColor=#F3F5F6;strokeColor=#A0A9AF;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="80" width="185" x="925" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="diag-title" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#24384A;fontStyle=1;" value="진단 LED" vertex="1">
+          <mxGeometry height="32" width="169" x="933" y="569" as="geometry" />
+        </mxCell>
+        <mxCell id="diag-body" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#24384A;fontStyle=0;" value="통신 오류 표시" vertex="1">
+          <mxGeometry height="18" width="165" x="935" y="607" as="geometry" />
+        </mxCell>
+        <mxCell id="pc" parent="1" style="rounded=1;arcSize=8;html=0;fillColor=#F3F5F6;strokeColor=#A0A9AF;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="95" width="230" x="35" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="pc-title" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=20;fontColor=#24384A;fontStyle=1;" value="시험 PC" vertex="1">
+          <mxGeometry height="32" width="214" x="43" y="564" as="geometry" />
+        </mxCell>
+        <mxCell id="pc-body" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#24384A;fontStyle=0;" value="USB–UART · 가상 고장 명령" vertex="1">
+          <mxGeometry height="33" width="210" x="45" y="602" as="geometry" />
+        </mxCell>
+        <mxCell id="canbus" edge="1" parent="1" source="bcm" style="edgeStyle=none;html=0;rounded=0;strokeColor=#24384A;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" target="can" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="265" y="320" as="sourcePoint" />
+            <mxPoint x="380" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="canlogic" edge="1" parent="1" source="can" style="edgeStyle=none;html=0;rounded=0;strokeColor=#24384A;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" target="mcu" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="545" y="320" as="sourcePoint" />
+            <mxPoint x="600" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="control" edge="1" parent="1" source="mcu" style="edgeStyle=none;html=0;rounded=0;strokeColor=#24384A;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" target="output" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="870" y="320" as="sourcePoint" />
+            <mxPoint x="925" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lampsig" edge="1" parent="1" source="output" style="edgeStyle=none;html=0;rounded=0;strokeColor=#24384A;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" target="lamps" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1110" y="320" as="sourcePoint" />
+            <mxPoint x="1200" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="diag-gpio" edge="1" parent="1" source="mcu" style="edgeStyle=none;html=0;rounded=0;strokeColor=#24384A;strokeWidth=2;endArrow=block;endFill=1;dashed=0;" target="diag" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="825" y="520" />
+              <mxPoint x="1015" y="520" />
+            </Array>
+            <mxPoint x="825" y="410" as="sourcePoint" />
+            <mxPoint x="1015" y="555" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="test-uart" edge="1" parent="1" source="pc" style="edgeStyle=none;html=0;rounded=0;strokeColor=#5E6C78;strokeWidth=2;endArrow=block;endFill=1;dashed=1;" target="mcu" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="595" />
+              <mxPoint x="300" y="430" />
+              <mxPoint x="620" y="430" />
+            </Array>
+            <mxPoint x="265" y="595" as="sourcePoint" />
+            <mxPoint x="620" y="410" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="canbus-label" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontColor=#24384A;fontStyle=0;" value="Classical CAN&#10;LAMP_COMMAND" vertex="1">
+          <mxGeometry height="48" width="90" x="277" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="canlogic-label" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontColor=#24384A;fontStyle=0;" value="TX/RX" vertex="1">
+          <mxGeometry height="35" width="55" x="545" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="control-label" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=13;fontColor=#24384A;fontStyle=0;" value="GPIO&#10;PWM" vertex="1">
+          <mxGeometry height="42" width="62" x="867" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="lampsig-label" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontColor=#24384A;fontStyle=0;" value="6출력" vertex="1">
+          <mxGeometry height="36" width="90" x="1110" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="power-label" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fontColor=#5E6C78;fontStyle=0;" value="전원 공급 / 공통 GND" vertex="1">
+          <mxGeometry height="30" width="220" x="590" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="diag-label" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontColor=#5E6C78;fontStyle=0;" value="GPIO" vertex="1">
+          <mxGeometry height="25" width="125" x="850" y="524" as="geometry" />
+        </mxCell>
+        <mxCell id="uart-label" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=14;fontColor=#5E6C78;fontStyle=0;" value="UART · 시험 빌드 전용" vertex="1">
+          <mxGeometry height="27" width="240" x="342.5" y="483" as="geometry" />
+        </mxCell>
+        <mxCell id="external-left" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fontColor=#5E6C78;fontStyle=0;" value="외부 장치" vertex="1">
+          <mxGeometry height="38" width="240" x="30" y="647" as="geometry" />
+        </mxCell>
+        <mxCell id="external-right" parent="1" style="text;html=0;strokeColor=none;fillColor=none;whiteSpace=wrap;align=center;verticalAlign=middle;fontFamily=Arial;fontSize=15;fontColor=#5E6C78;fontStyle=0;" value="외부 출력 대상" vertex="1">
+          <mxGeometry height="35" width="225" x="1200" y="495" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -5,6 +5,7 @@
 | 공통 개발 범위·실행 환경 | [공통 개발 범위·실행 환경](project-scope.md) |
 | SW 요구사항 | [SW 요구사항]([SWE.1]requirements.md) |
 | 요구사항 연결 | [요구사항 연결]([SWE.1]traceability.md) |
+| 장치 구성 | [장치 구성](environment.md) |
 | 선택 근거 | [선택 근거](design-decisions.md) |
 | 보유 장비·부품 | [보유 장비·부품](parts.md) |
 

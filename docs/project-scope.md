@@ -41,3 +41,4 @@ ECU 단독 SW 응답 기준과 구분.
 
 [diagrams.net 원본](../diagrams/environment-context.drawio)
 
+상세 장치 구성: [환경 문서](environment.md).

@@ -1,10 +1,10 @@
 {
   "scope": "Offline DBC and reference acceptance-rule design checks only",
   "status": "passed",
-  "executed_at_utc": "2026-10-31T08:44:18.454921+00:00",
+  "executed_at_utc": "2026-10-31T09:13:54.618836+00:00",
   "python": "3.12.14",
   "cantools": "45.1.2",
-  "dbc_sha256": "99e6c94fc456441f3e821d29814698d212dd1804910e1f79038f987145a2931d",
+  "dbc_sha256": "cda2465f1220720e8e85f48467fb90552d6698cae7b1c90f81382fcf0797e2c4",
   "normal_roundtrips": 96,
   "raw_payloads_classified": 256,
   "normal_payload_count": 96,

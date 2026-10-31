@@ -1,4 +1,4 @@
-VERSION "SYS3 CAN interface draft 1"
+VERSION "Rear lamp CAN interface draft 1"
 
 NS_ :
     CM_

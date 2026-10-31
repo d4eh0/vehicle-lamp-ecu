@@ -11,12 +11,14 @@
 | SYS.3 | [\[SYS.3\]architecture.md](%5BSYS.3%5Darchitecture.md) — 시스템 아키텍처 설계 | 설계 초안 |
 | SYS.3 | 정적 아키텍처 — [SVG](../diagrams/%5BSYS.3%5Dstatic-architecture.svg) · [편집 원본](../diagrams/%5BSYS.3%5Dstatic-architecture.drawio) | 검토본 반영 |
 | SYS.3 | 동적 아키텍처 4종 — [설명·미리보기](%5BSYS.3%5Darchitecture.md#4-동적-아키텍처) · [편집 원본](../diagrams/%5BSYS.3%5Ddynamic-architecture.drawio) | 검토본 반영 |
+| SYS.3 | CAN 인터페이스 — [명세·도구 검토](%5BSYS.3%5Dcan-interface.md) · [DBC](../can/vehicle-lamp.dbc) | 오프라인 검사 완료 / 실통신 미검증 |
 | 공통 | [parts.md](parts.md) — 장비·부품 목록 | 계속 보완 |
 
 ## 추가할 산출물
 
 - SYS.2: Mermaid 상태도·시퀀스·제어 흐름도 (`.mmd`, `.svg`)
-- SYS.3: CAN DBC·CubeMX 설정·KiCad 회로도·검증 환경 설계
+- SWE.2~3: CubeMX 설정 및 소프트웨어 설계·구현
+- HWE.1~2: 외부 회로 요구사항·KiCad 회로도
 
 작업 순서와 완료 기준은 루트의 [TASK.md](../TASK.md)를 따른다.
 

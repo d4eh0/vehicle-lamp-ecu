@@ -6,7 +6,7 @@
 | 환경·시나리오 | [장치 구성](environment.md) · [동작 참고]([SWE.1]behavior-scenarios.md) |
 | SWE.1 | [SW 요구사항]([SWE.1]requirements.md), [연결표]([SWE.1]traceability.md) |
 | SWE.2 | [SW 아키텍처]([SWE.2]architecture.md), [CAN 인터페이스]([SWE.2]can-interface.md) |
-| SWE.3 | 유닛 상세 설계·CubeMX `.ioc`·C 코드 예정 |
+| SWE.3 | [CubeMX 설정·C 코드·실행 상태](../firmware/README.md) |
 | SWE.4~6 | [검증 계획](verification-plan.md), 실행 결과 예정 |
 | HWE.1 | [HW 요구사항]([HWE.1]requirements.md) |
 | HWE.2 | [회로 설계 항목]([HWE.2]design.md), KiCad 회로·BOM·ERC 예정 |

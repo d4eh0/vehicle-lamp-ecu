@@ -1,0 +1,16 @@
+# STM32CubeIDE / macOS
+.DS_Store
+__MACOSX/
+.metadata/
+Debug/
+Release/
+*.o
+*.d
+*.su
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+*.launch
+.osx.project
